@@ -4,14 +4,14 @@ Hey there! 👋 Welcome to this full-stack web app that’s built using **ASP.NE
 
 ---
 
-## 🏗️ Tech Stack - What’s Under the Hood?
+## 🏠 Tech Stack - What’s Under the Hood?
 
 ### Backend 🖥️
 
 - **ASP.NET Core WebAPI** ⚙️ (Super-fast and cross-platform API framework)
 - **CQRS + Mediator Pattern** 🛠️ (Keeping commands and queries separate for a clean codebase)
-- **Entity Framework Core** 🗄️ (ORM that makes database stuff a breeze)
-- **ASP.NET Core Identity** 🔐 (Handles authentication like a pro)
+- **Entity Framework Core** 🛂 (ORM that makes database stuff a breeze)
+- **ASP.NET Core Identity** 🔒 (Handles authentication like a pro)
 - **AutoMapper** 🔄 (Transforms objects like a wizard)
 - **SignalR** 📡 (Real-time web communication for instant updates)
 - **Azure Deployment** ☁️ (Because cloud is the future)
@@ -19,11 +19,12 @@ Hey there! 👋 Welcome to this full-stack web app that’s built using **ASP.NE
 ### Frontend 🌐
 
 - **React** ⚛️ (Because why not? It’s awesome!)
-- **TypeScript** 📜 (Say goodbye to annoying JS bugs)
-- **React Router** 🛤️ (For that smooth single-page app experience)
-- **React Hook Form & Zod** 📋✅ (Handling forms like a boss)
-- **Semantic UI** 🎨 (Gives your UI a sleek and stylish look)
+- **TypeScript** 📝 (Say goodbye to annoying JS bugs)
+- **React Router** 🛠️ (For that smooth single-page app experience)
+- **React Hook Form & Zod** 🗋l️✅ (Handling forms like a boss)
+- **Material UI** 🎨 (Gives your UI a sleek and stylish look)
 - **React Query** 🔍⚡ (Fetch, cache, and sync data like a pro)
+- **MobX** 💡 (Simple and scalable state management)
 
 ---
 
@@ -32,13 +33,13 @@ Hey there! 👋 Welcome to this full-stack web app that’s built using **ASP.NE
 - 🚀 **Full-Stack Vibes**: ASP.NET + React combo for max efficiency
 - 🔑 **Secure Login System**: Users can sign up, log in, and stay protected
 - 💬 **Real-Time Chat**: SignalR-powered chat that works instantly
-- 🎨 **Sleek UI**: Built with **Semantic UI**, so it looks modern and fresh
-- 📋 **Smart Forms**: React Hook Form + Zod makes input handling a breeze
+- 🎨 **Sleek UI**: Built with **Material UI**, so it looks modern and fresh
+- 🗋l️ **Smart Forms**: React Hook Form + Zod makes input handling a breeze
 - 🔍 **Supercharged API Calls**: React Query makes data fetching smooth
 - 📸 **Photo Uploads & Profiles**: Users can upload and manage profile pics
 - 📊 **Data Optimization**: Paging, sorting, and filtering to keep things snappy
 - ☁️ **Azure Hosting**: Deploy once, scale forever
-- 🏗️ **Future-Proof Codebase**: Clean Architecture means easy maintenance
+- 🏠 **Future-Proof Codebase**: Clean Architecture means easy maintenance
 
 ---
 
@@ -58,7 +59,7 @@ Make sure you have the following installed:
 2. **Node.js (18+ or 20+)** 🚀
 3. **Git** 🛠️ (to clone the repo)
 
-### 1️⃣ Clone the Repo 📂
+### 1️⃣ Clone the Repo 🗂️
 
 ```sh
  git clone https://github.com/BernieTv/.NET-Activities-App
@@ -99,7 +100,7 @@ Make sure you have the following installed:
 - Sign up for a free **Cloudinary** account at [cloudinary.com](https://cloudinary.com) 🌥️
 - Replace **REPLACEME** with your actual Cloudinary API keys 🔑
 
-### 4️⃣ Run the App Locally 🎰
+### 4️⃣ Run the App Locally 🎠
 
 ```bash
 # Start the API
@@ -128,9 +129,9 @@ Got ideas? Found a bug? Want to add a feature? PRs are always welcome! 🎉 Open
 
 ---
 
-## 📜 License - No Strings Attached!
+## 📝 License - No Strings Attached!
 
-This project is licensed under the **MIT License** 📄. Go ahead, use it, modify it, make it yours.
+This project is licensed under the **MIT License** 📞. Go ahead, use it, modify it, make it yours.
 
 ---
 

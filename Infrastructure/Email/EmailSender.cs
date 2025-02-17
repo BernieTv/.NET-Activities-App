@@ -46,15 +46,13 @@ public class EmailSender(IResend resend, IConfiguration config) : IEmailSender<U
     {
         var message = new EmailMessage
         {
-            From = "no-reply@resend.trycatchlearn.com",
+            From = "no-reply@resend.bektukhtasinov.com",
             Subject = subject,
             HtmlBody = body
         };
+
         message.To.Add(email);
 
-        Console.WriteLine(message.HtmlBody);
-
         await resend.EmailSendAsync(message);
-        // await Task.CompletedTask;
     }
 }

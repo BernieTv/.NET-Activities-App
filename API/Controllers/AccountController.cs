@@ -12,7 +12,7 @@ using static API.DTOs.GitHubInfo;
 
 namespace API.Controllers;
 
-public class AccountController(SignInManager<User> signInManager, 
+public class AccountController(SignInManager<User> signInManager,
     IEmailSender<User> emailSender, IConfiguration config) : BaseApiController
 {
     [AllowAnonymous]
@@ -47,15 +47,15 @@ public class AccountController(SignInManager<User> signInManager,
             return BadRequest("Failed to retrieve access token");
 
         // step 2 - fetch user info from GitHub
-        httpClient.DefaultRequestHeaders.Authorization = 
+        httpClient.DefaultRequestHeaders.Authorization =
             new AuthenticationHeaderValue("Bearer", tokenContent.AccessToken);
         httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Reactivities");
 
-        var userReponse= await httpClient.GetAsync("https://api.github.com/user");
-        if (!userReponse.IsSuccessStatusCode)
+        var userResponse = await httpClient.GetAsync("https://api.github.com/user");
+        if (!userResponse.IsSuccessStatusCode)
             return BadRequest("Failed to fetch user from GitHub");
 
-        var user = await userReponse.Content.ReadFromJsonAsync<GitHubUser>();
+        var user = await userResponse.Content.ReadFromJsonAsync<GitHubUser>();
         if (user == null) return BadRequest("Failed to read user from GitHub");
 
         // step 3 - getting the email if needed
@@ -66,7 +66,7 @@ public class AccountController(SignInManager<User> signInManager,
             {
                 var emails = await emailResponse.Content.ReadFromJsonAsync<List<GitHubEmail>>();
 
-                var primary = emails?.FirstOrDefault(e => e is {Primary: true, Verified: true})?.Email;
+                var primary = emails?.FirstOrDefault(e => e is { Primary: true, Verified: true })?.Email;
 
                 if (string.IsNullOrEmpty(primary))
                     return BadRequest("Failed to get email from GitHub");
@@ -139,7 +139,7 @@ public class AccountController(SignInManager<User> signInManager,
         var user = await signInManager.UserManager.Users
             .FirstOrDefaultAsync(x => x.Email == email || x.Id == userId);
 
-        if (user == null || string.IsNullOrEmpty(user.Email)) 
+        if (user == null || string.IsNullOrEmpty(user.Email))
             return BadRequest("User not found");
 
         await SendConfirmationEmailAsync(user, user.Email);
@@ -153,7 +153,7 @@ public class AccountController(SignInManager<User> signInManager,
         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
         var confirmEmailUrl = $"{config["ClientAppUrl"]}/confirm-email?userId={user.Id}&code={code}";
-    
+
         await emailSender.SendConfirmationLinkAsync(user, email, confirmEmailUrl);
     }
 
